@@ -1,5 +1,5 @@
-# Trabalho 5 - Simulação de algoritmos de substituição de páginas 
-- Esse é um projeto que visou a simulação de vários conceitos de gerenciamento de memória em sistemas operacionais .
+# Trabalho 5 - Comunicação via Rede através de Sockets
+- Esse é um projeto que visou trabalhar a questão de comunicação e troca de informações via rede entre computadores utilizando o conceito de sockets em C++.
 
 ## Guia de Instalação:
 1. Extrair o arquivo zip para o local desejado
