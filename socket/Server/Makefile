@@ -1,41 +1,32 @@
-#Exemplo de makefile
+SRC=$(shell find ./src/ -name "*.cpp" -type f)
+$(shell mkdir -p objects)
+PROJ=servidor
+OBJ=$(patsubst ./src%, ./objects%, $(patsubst %.cpp, %.o , $(SRC)))
+FLAGS= -std=c++17 -Wall -Wextra -Wshadow -Werror -I include
 
-# Copilador
-CC = g++ -std=c++17
+all: $(PROJ)
 
-# Flags de copilacao
-FLAGS = -Wall -Wextra -Wshadow -Werror
+$(PROJ): $(OBJ)
+	g++ -o $@ $^ $(FLAGS)
 
-# Variaveis do tipo execultavel
-O = *.o
+objects/%.o: src/%.cpp
+	g++ -c -o $@ $^ $(FLAGS)
 
-#Nome do execultavel
-EXE = exe
+run: $(PROJ)
+	./$(PROJ)
 
-# Comando para limpar arquivo
-RM = rm -rf
-
-# Comando para pegar todos os .cpp da pasta do Makefile
-APPNAME = $(wildcard *.cpp)
-
-# Copila e execulta o programa e depois apaga todos os arquivos .o e o
-# execultavel criado
-all: run clean
-
-# Limpa o terminal de verdade
-limpa:
-	tput reset
-
-# Copila e execulta o programa
-run:
-	$(CC) $(FLAGS) -c $(APPNAME)
-	$(CC) $(FLAGS) -o $(EXE) $(O)
-	./$(EXE)
-
-# Apaga todos os arquivos .o e o execultavel criado
 clean:
-	$(RM) $(O)
-	$(RM) $(EXE)
+	@find . -type f -name "*.o" -exec rm '{}' \;
+	@find . -type f -name "$(PROJ)" -exec rm '{}' \;
 
-.PHONY: all clean
-#------------------------------------------------------------------------------#
+remake:
+	$(MAKE) clean
+	$(MAKE)
+
+runmake:
+	$(MAKE) remake
+	$(MAKE) run
+
+valgrind:
+	$(MAKE)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(PROJ)
