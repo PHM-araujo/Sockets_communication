@@ -23,7 +23,7 @@
 4. Compilador: G++ 
 5. Dialeto == C++17
 
-##Como comunicar os sockets
+## Como comunicar os sockets
 1. Primeiramente abra um terminal no diretório Client e outro no Server 
 2. Em seguida, execute um ou o outro
 3. Siga as instruç~oes do primeiro socket a ser iniciado e execute o outro em seguida, eles esperam por sinais um do outro
