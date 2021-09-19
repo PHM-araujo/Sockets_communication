@@ -41,7 +41,7 @@ void Loja::routine(){
 
     respondRequest(msg);
 
-    validaInput(out, "\nDeseja manter a loja funcionando? Digite 0 p/ Não: ",1);
+    validaInput(out, "\nDeseja manter a loja funcionando? Digite 0 p/ Não e 1 p/ Sim: ",1);
 
     }while(out);
 

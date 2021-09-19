@@ -10,7 +10,7 @@
 class SocketClient{
 
     private:
-        int portNumber, socketClient_fd;;
+        int portNumber, socketClient_fd;
         struct sockaddr_in addressClient;
         std::string ip;
 
