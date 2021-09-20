@@ -26,7 +26,7 @@
 ## Como comunicar os sockets
 1. Primeiramente abra um terminal no diretório Client e outro no Server 
 2. Em seguida, execute um ou o outro
-3. Siga as instruç~oes do primeiro socket a ser iniciado e execute o outro em seguida, eles esperam por sinais um do outro
+3. Siga as instruções do primeiro socket a ser iniciado e execute o outro em seguida, eles esperam por sinais um do outro
 	
 ## Autoria e constribuições:
 - Esse projeto é autoria de Pedro Henrique Melo Araujo e Arthur Haickel Nina.
